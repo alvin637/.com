@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Nyange Phone Repair & Accessories">
+<title>Nyange Phone Repair & Accessories</title>
+<style>
+:root{--b:#030303;--w:#fff;--m:#aaa;--line:#ffffff26;--glass:#ffffff0d}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Segoe UI,Arial,sans-serif;color:#fff;background:radial-gradient(circle at 15% 10%,#fff2,transparent 28%),radial-gradient(circle at 90% 30%,#fff1,transparent 25%),linear-gradient(135deg,#000,#0b0b0d 40%,#222 72%,#000);background-attachment:fixed;min-height:100vh}
+nav{position:sticky;top:0;z-index:50;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;background:#000b;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.logo{font-weight:900;letter-spacing:1.5px}.logo span{font-weight:400;color:#ccc}.links{display:flex;gap:9px}.links a{border:1px solid var(--line);padding:9px 14px;border-radius:99px;transition:.3s}.links a:hover{background:#fff;color:#000;transform:translateY(-2px)}
+.hero{min-height:72vh;display:grid;place-items:center;text-align:center;padding:80px 20px}.hero>div{max-width:950px}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--glass);padding:8px 14px;border-radius:99px;color:#ddd;margin-bottom:20px;animation:pulse 3s infinite}
+h1{font-size:clamp(2.4rem,7vw,6rem);line-height:.95;letter-spacing:-4px;background:linear-gradient(120deg,#fff,#666,#fff);background-size:220%;color:transparent;background-clip:text;animation:shine 7s linear infinite}
+.hero p{max-width:700px;margin:25px auto;color:#aaa;font-size:1.08rem}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 20px;border-radius:99px;border:1px solid #fff;background:#fff;color:#000;font-weight:800;transition:.3s}.btn.alt{background:transparent;color:#fff;border-color:var(--line)}.btn:hover{transform:translateY(-4px);box-shadow:0 15px 40px #fff2}
+.container{width:min(1180px,92%);margin:auto}.section{padding:55px 0}.title{text-align:center;font-size:2rem}.sub{text-align:center;color:#aaa;margin:8px 0 28px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{padding:28px;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff18,#ffffff05);border-radius:22px;transition:.45s;position:relative;overflow:hidden}.service:hover{transform:translateY(-8px);box-shadow:0 25px 70px #000}.icon{font-size:2rem;margin-bottom:12px}.service p{color:#aaa;margin-top:7px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}.tools input,.tools select,.admin input,.admin select,.admin textarea{flex:1;min-width:190px;background:#09090b;color:#fff;border:1px solid var(--line);padding:12px;border-radius:12px;outline:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}.card{background:linear-gradient(150deg,#ffffff18,#ffffff05);border:1px solid var(--line);border-radius:18px;overflow:hidden;cursor:pointer;transition:.45s;animation:rise .7s both;position:relative}.card:hover{transform:translateY(-9px) scale(1.015);box-shadow:0 25px 80px #000;border-color:#fff5}.card img{width:100%;height:190px;object-fit:cover;background:#111}.card-body{padding:16px}.price{font-weight:900;font-size:1.08rem}.price .old{font-weight:600;color:#999;text-decoration:line-through;font-size:.85rem;margin-right:7px}.tag{font-size:.78rem;color:#999;margin-top:6px}.empty{grid-column:1/-1;text-align:center;color:#999;padding:35px;border:1px dashed var(--line);border-radius:18px}
+.discount-badge{position:absolute;top:10px;left:10px;background:#f44;color:#fff;font-size:.72rem;font-weight:900;padding:5px 10px;border-radius:99px;z-index:2}
+footer{margin-top:70px;padding:35px 5%;text-align:center;border-top:1px solid var(--line);color:#999}.secret{color:#fff;font-weight:900;letter-spacing:3px;cursor:pointer;display:inline-block;padding:8px}
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:#000c;backdrop-filter:blur(14px)}.modal.open{display:flex;animation:fade .25s}.box{width:min(720px,100%);max-height:90vh;overflow:auto;border:1px solid var(--line);border-radius:25px;background:linear-gradient(145deg,#19191d,#070709);box-shadow:0 25px 80px #000;padding:24px;animation:pop .45s}
+.close{float:right;border:0;background:0;color:#aaa;font-size:30px}.close:hover{color:#fff}.detail-img{width:100%;max-height:330px;object-fit:contain;background:#050505;border-radius:17px;margin:12px 0 18px}.detail-actions{display:flex;gap:10px;flex-wrap:wrap}.detail-actions a{flex:1;padding:12px;border-radius:12px;text-align:center;font-weight:800;border:1px solid var(--line)}.wa{background:#25d366;color:#001b08}.call{background:#fff;color:#000}
+.admin{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin textarea{grid-column:1/-1;min-height:90px}.admin button{padding:12px;border-radius:12px;border:1px solid var(--line);background:#fff;color:#000;font-weight:900}.admin .full{grid-column:1/-1}.admin label{grid-column:1/-1;font-size:.8rem;color:#999;margin-top:4px}.admin .imgprev{grid-column:1/-1;max-height:140px;border-radius:10px;display:none;object-fit:cover}
+.admin-list{margin-top:22px;display:grid;gap:8px}.row{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);padding:11px;border-radius:12px}.row button{background:#f44;color:#fff;border:0;padding:7px 10px;border-radius:8px}.note{font-size:.8rem;color:#888;margin-top:10px}.toast{position:fixed;right:18px;bottom:18px;z-index:200;background:#fff;color:#000;padding:12px 17px;border-radius:12px;transform:translateY(130px);opacity:0;transition:.4s}.toast.show{transform:none;opacity:1}
+@keyframes shine{to{background-position:220%}}@keyframes pulse{50%{box-shadow:0 0 35px #fff1}}@keyframes rise{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}@keyframes pop{from{opacity:0;transform:scale(.88) translateY(25px)}to{opacity:1;transform:none}}@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(max-width:760px){.services{grid-template-columns:1fr}.links a:not(:last-child){display:none}.hero h1{letter-spacing:-2px}.admin{grid-template-columns:1fr}.admin textarea{grid-column:auto}.card img{height:165px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">NYANGE <span>PHONE REPAIR & ACCESSORIES</span></div><div class="links"><a href="#services">Services</a><a href="#products">Products</a><a href="tel:0706140815">Call</a></div></nav>
+
+<header class="hero"><div>
+<div class="badge">✦ PROFESSIONAL PHONE REPAIR • ACCESSORIES • SALES</div>
+<h1>NYANGE PHONE<br>REPAIR & ACCESSORIES</h1>
+<p>Reliable phone repairs, quality devices and accessories — with a classic, animated digital storefront.</p>
+<div class="actions"><a class="btn" href="https://wa.me/256706140815?text=Hello%20Nyange%20Phone%20Repair%20%26%20Accessories" target="_blank">WhatsApp Us</a><a class="btn alt" href="tel:0706140815">Direct Call</a><a class="btn alt" href="mailto:ssenyonjoalvinatkinson@gmail.com">Email Us</a></div>
+</div></header>
+
+<section class="section" id="services"><div class="container"><h2 class="title">What We Do</h2><p class="sub">Professional service with a clean classic experience.</p><div class="services">
+<article class="service"><div class="icon">📱</div><h3>Phone Repairs</h3><p>Phone repair and hardware support.</p></article>
+<article class="service"><div class="icon">🎧</div><h3>Accessories</h3><p>Browse available phone accessories.</p></article>
+<article class="service"><div class="icon">⚡</div><h3>Quick Contact</h3><p>Order through WhatsApp, call or email.</p></article>
+</div></div></section>
+
+<section class="section" id="products"><div class="container"><h2 class="title">Available Items</h2><p class="sub">Click any product for its animated details popup.</p><div class="tools"><input id="search" type="search" placeholder="Search products..." oninput="renderProducts()"><select id="filter" onchange="renderProducts()"><option value="all">All items</option><option value="phones">Phones</option><option value="accessories">Accessories</option><option value="repairs">Repair Services</option><option value="new">New Products</option></select></div><div class="grid" id="product-grid"></div></div></section>
+
+<footer><div class="secret" id="secret">NYANGE</div><p>0706140815 · ssenyonjoalvinatkinson@gmail.com</p><small>© <span id="year"></span> Nyange Phone Repair & Accessories</small></footer>
+
+<div class="modal" id="productModal"><div class="box"><button class="close" onclick="closeModal('productModal')">&times;</button><div id="detail"></div></div></div>
+<div class="modal" id="loginModal"><div class="box" style="max-width:430px"><button class="close" onclick="closeModal('loginModal')">&times;</button><h2>Admin Access</h2><p class="sub" style="text-align:left">Enter administrator password.</p><input id="password" type="password" placeholder="Admin password" style="width:100%;padding:13px;border-radius:12px;border:1px solid var(--line);background:#09090b;color:#fff"><button class="btn" style="width:100%;margin-top:12px" onclick="login()">Enter Dashboard</button><p class="note">Security note: a password embedded in standalone HTML can be discovered by inspecting the source. Use server-side authentication for production.</p></div></div>
+
+<div class="modal" id="adminModal"><div class="box"><button class="close" onclick="closeModal('adminModal')">&times;</button><h2>Nyange Admin Dashboard</h2><p class="sub" style="text-align:left">Post an item and it appears immediately for every visitor.</p>
+<form class="admin" onsubmit="postItem(event)">
+  <input id="title" required placeholder="Item name">
+  <input id="price" required placeholder="Price e.g. UGX 150,000">
+  <select id="category"><option value="phones">Phones</option><option value="accessories">Accessories</option><option value="repairs">Repair Services</option><option value="new">New Products</option></select>
+  <input id="image" type="url" placeholder="Image URL (optional)">
+  <label class="full">Or choose a photo from your gallery/device</label>
+  <input class="full" id="imageFile" type="file" accept="image/*" onchange="previewImage(event)">
+  <img id="imagePreview" class="imgprev">
+  <textarea id="description" placeholder="Description"></textarea>
+  <label class="full">Discount (optional)</label>
+  <input id="discountPrice" placeholder="Discounted price e.g. UGX 120,000">
+  <input id="discountEnd" type="datetime-local" placeholder="Discount ends">
+  <button class="full" type="submit">POST ITEM</button>
+</form>
+<div class="admin-list" id="adminList"></div>
+<p class="note">Products are stored in Firebase Firestore, so every visitor on every device sees the same live list in real time. Uploaded gallery photos are stored directly with the product — keep them reasonably small (under ~1MB) for best performance.</p>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getFirestore, collection, addDoc, deleteDoc, doc,
+  onSnapshot, query, orderBy, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDh2Iy7obJZC1KeCqgsLsv6hlk7Neq2sz0",
+  authDomain: "nyange-a54bd.firebaseapp.com",
+  projectId: "nyange-a54bd",
+  storageBucket: "nyange-a54bd.firebasestorage.app",
+  messagingSenderId: "94076120843",
+  appId: "1:94076120843:web:27294207efb92242defc0e",
+  measurementId: "G-DE93C174W5"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const productsCol = collection(db, "products");
+
+const PHONE='256706140815',EMAIL='ssenyonjoalvinatkinson@gmail.com',PASSWORD='alvinatkinson2010';
+const IMG='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><defs><linearGradient id="g"><stop stop-color="#333"/><stop offset="1" stop-color="#050505"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="50%" fill="white" font-family="Arial" font-size="34" text-anchor="middle">NYANGE</text></svg>');
+
+let products=[]; // populated live from Firestore
+let taps=0,timer;
+let uploadedImageData=''; // holds base64 data of a gallery-selected image, if any
+
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+function toast(x){let t=document.getElementById('toast');t.textContent=x;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+
+function previewImage(e){
+  const file=e.target.files[0];
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{
+    uploadedImageData=reader.result;
+    const prev=document.getElementById('imagePreview');
+    prev.src=uploadedImageData;
+    prev.style.display='block';
+    document.getElementById('image').value=''; // gallery photo takes priority over URL
+  };
+  reader.readAsDataURL(file);
+}
+
+function isDiscountActive(p){
+  return !!(p.discountPrice && p.discountEnd && new Date(p.discountEnd).getTime() > Date.now());
+}
+
+function renderProducts(){
+  let q=document.getElementById('search').value.toLowerCase(),f=document.getElementById('filter').value;
+  let a=products.filter(p=>(f==='all'||p.category===f)&&(!q||(`${p.title} ${p.description} ${p.price}`).toLowerCase().includes(q)));
+  document.getElementById('product-grid').innerHTML=a.length?a.map((p,i)=>{
+    const active=isDiscountActive(p);
+    const priceHtml=active?`<span class="old">${esc(p.price)}</span>${esc(p.discountPrice)}`:esc(p.price);
+    const badge=active?'<div class="discount-badge">DISCOUNT</div>':'';
+    return `<article class="card" style="animation-delay:${Math.min(i,8)*.05}s" onclick="openProduct('${p.id}')">${badge}<img src="${esc(p.image||IMG)}" onerror="this.src='${IMG}'" alt="${esc(p.title)}"><div class="card-body"><h3>${esc(p.title)}</h3><div class="price">${priceHtml}</div><div class="tag">${esc(p.category)}</div></div></article>`;
+  }).join(''):'<div class="empty">No matching items yet.</div>';
+}
+
+function openProduct(id){
+  let p=products.find(x=>x.id===id);if(!p)return;
+  const active=isDiscountActive(p);
+  const priceHtml=active?`<span class="old">${esc(p.price)}</span> ${esc(p.discountPrice)}`:esc(p.price);
+  const discountNote=active?`<p style="color:#f88;margin-bottom:8px">Discount ends ${new Date(p.discountEnd).toLocaleString()}</p>`:'';
+  let msg=encodeURIComponent(`Hello Nyange Phone Repair & Accessories. I am interested in: ${p.title} (${active?p.discountPrice:p.price}). Please confirm availability.`);
+  document.getElementById('detail').innerHTML=`<h2>${esc(p.title)}</h2><img class="detail-img" src="${esc(p.image||IMG)}" onerror="this.src='${IMG}'" alt="${esc(p.title)}"><h3>${priceHtml}</h3>${discountNote}<p style="color:#aaa;margin:10px 0 20px">${esc(p.description)}</p><div class="detail-actions"><a class="wa" target="_blank" href="https://wa.me/${PHONE}?text=${msg}">WhatsApp Order</a><a class="call" href="tel:0706140815">Direct Call</a><a href="mailto:${EMAIL}?subject=Nyange%20Product%20Enquiry&body=${msg}">Email</a></div>`;
+  openModal('productModal');
+}
+
+function openModal(id){document.getElementById(id).classList.add('open')}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open')}));
+
+function login(){
+  if(document.getElementById('password').value===PASSWORD){
+    closeModal('loginModal');openModal('adminModal');renderAdmin();
+    document.getElementById('password').value='';toast('Admin access granted');
+  } else toast('Incorrect admin password');
+}
+
+async function postItem(e){
+  e.preventDefault();
+  try{
+    const chosenImage = uploadedImageData || image.value.trim() || IMG;
+    const discountPriceVal = discountPrice.value.trim();
+    const discountEndVal = discountEnd.value;
+    await addDoc(productsCol,{
+      title: title.value.trim(),
+      price: price.value.trim(),
+      category: category.value,
+      image: chosenImage,
+      description: description.value.trim() || 'Contact Nyange for more information.',
+      discountPrice: discountPriceVal || null,
+      discountEnd: (discountPriceVal && discountEndVal) ? discountEndVal : null,
+      createdAt: serverTimestamp()
+    });
+    e.target.reset();
+    uploadedImageData='';
+    document.getElementById('imagePreview').style.display='none';
+    toast('Item posted successfully');
+  }catch(err){
+    console.error('Error posting product:', err);
+    toast('Failed to post item — check your connection');
+  }
+}
+
+async function deleteItem(id){
+  if(!confirm('Delete this item?')) return;
+  try{
+    await deleteDoc(doc(db,'products',id));
+    toast('Item deleted');
+  }catch(err){
+    console.error('Error deleting product:', err);
+    toast('Failed to delete item');
+  }
+}
+
+function renderAdmin(){
+  adminList.innerHTML=products.map(p=>`<div class="row"><span><b>${esc(p.title)}</b><br><small style="color:#999">${esc(p.price)}${isDiscountActive(p)?' → '+esc(p.discountPrice):''}</small></span><button onclick="deleteItem('${p.id}')">Delete</button></div>`).join('');
+}
+
+// Live sync: fires on load and instantly whenever any admin posts/deletes, for every visitor
+const q = query(productsCol, orderBy('createdAt','desc'));
+onSnapshot(q, (snapshot) => {
+  products = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderProducts();
+  if(document.getElementById('adminModal').classList.contains('open')) renderAdmin();
+}, (err) => {
+  console.error('Error loading products:', err);
+  toast('Could not load products — check your connection');
+});
+
+// Re-render periodically so expired discounts fall away automatically without a refresh
+setInterval(renderProducts, 60000);
+
+document.getElementById('secret').addEventListener('click',()=>{taps++;clearTimeout(timer);timer=setTimeout(()=>taps=0,1800);if(taps>=20){taps=0;openModal('loginModal')}});
+document.getElementById('year').textContent=new Date().getFullYear();
+
+// Expose functions used by inline onclick/oninput attributes (needed because this is a module)
+window.renderProducts=renderProducts;
+window.openProduct=openProduct;
+window.openModal=openModal;
+window.closeModal=closeModal;
+window.login=login;
+window.postItem=postItem;
+window.deleteItem=deleteItem;
+window.previewImage=previewImage;
+</script>
+</body>
+</html>
