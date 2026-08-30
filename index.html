@@ -94,7 +94,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const productsCol = collection(db, "products");
 
-const PHONE='256706140815',EMAIL='ssenyonjoalvinatkinson@gmail.com',PASSWORD='alvinatkinson2010';
+const PHONE='256706140815',EMAIL='ssenyonjoalvinatkinson@gmail.com',PASSWORD='0706140815';
 const IMG='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><defs><linearGradient id="g"><stop stop-color="#333"/><stop offset="1" stop-color="#050505"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="50%" fill="white" font-family="Arial" font-size="34" text-anchor="middle">NYANGE</text></svg>');
 
 let products=[]; // populated live from Firestore
@@ -209,7 +209,7 @@ onSnapshot(q, (snapshot) => {
 // Re-render periodically so expired discounts fall away automatically without a refresh
 setInterval(renderProducts, 60000);
 
-document.getElementById('secret').addEventListener('click',()=>{taps++;clearTimeout(timer);timer=setTimeout(()=>taps=0,1800);if(taps>=20){taps=0;openModal('loginModal')}});
+document.getElementById('secret').addEventListener('click',()=>{taps++;clearTimeout(timer);timer=setTimeout(()=>taps=0,1800);if(taps>=5){taps=0;openModal('loginModal')}});
 document.getElementById('year').textContent=new Date().getFullYear();
 
 // Expose functions used by inline onclick/oninput attributes (needed because this is a module)
